@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Kopi</string>
+    <string name="hint_text">email</string>
+    <string name="logo_description">Kopi Logo</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="register">Register Here</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register_now">Register</string>
+    <string name="login_here">Login Here</string>
+    <string name="not_registered">Don\'t have an account yet?</string>
+    <string name="already_registered">Do you already have an account?</string>
+    <string name="homepage">Homepage</string>
+    <string name="clip_content">Clip Content</string>
+    <string name="notification_title">Kopi</string>
+    <string name="notification_message">Listening</string>
+    <string name="ticker_text">Kopi ticker</string>
+</resources>

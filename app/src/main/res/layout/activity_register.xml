@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303641"
+    tools:context=".RegisterActivity">
+
+    <Button
+        android:id="@+id/button_login_2"
+        android:layout_width="99dp"
+        android:layout_height="47dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/login_here"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_background_2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_background_2"
+        app:layout_constraintStart_toStartOf="@+id/imageView_background_2"
+        app:layout_constraintTop_toBottomOf="@+id/textView_already_registered"
+        app:layout_constraintVertical_bias="0.243" />
+
+    <ImageView
+        android:id="@+id/imageView_logo_2"
+        android:layout_width="268dp"
+        android:layout_height="132dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.108"
+        app:srcCompat="@drawable/kopi" />
+
+    <ImageView
+        android:id="@+id/imageView_background_2"
+        android:layout_width="334dp"
+        android:layout_height="439dp"
+        android:background="@drawable/image_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_logo_2"
+        app:layout_constraintVertical_bias="0.21"
+        app:srcCompat="@android:color/black" />
+
+
+    <EditText
+        android:id="@+id/editText_password_2"
+        android:layout_width="241dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:textColor="#ff007f"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColorHint="#ff007f"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_background_2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_background_2"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/imageView_background_2"
+        app:layout_constraintTop_toBottomOf="@+id/editText_email_2"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <EditText
+        android:id="@+id/editText_email_2"
+        android:layout_width="241dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:textColor="#ff007f"
+        android:textColorHint="#ff007f"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_background_2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_background_2"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/imageView_background_2"
+        app:layout_constraintTop_toTopOf="@+id/imageView_background_2"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <Button
+        android:id="@+id/button_register_2"
+        android:layout_width="152dp"
+        android:layout_height="44dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/register_now"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_background_2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_background_2"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/imageView_background_2"
+        app:layout_constraintTop_toBottomOf="@+id/editText_password_2"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <TextView
+        android:id="@+id/textView_already_registered"
+        android:layout_width="203dp"
+        android:layout_height="33dp"
+        android:gravity="center"
+        android:text="@string/not_registered"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_background_2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_background_2"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/imageView_background_2"
+        app:layout_constraintTop_toBottomOf="@+id/button_register_2"
+        app:layout_constraintVertical_bias="0.325" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
