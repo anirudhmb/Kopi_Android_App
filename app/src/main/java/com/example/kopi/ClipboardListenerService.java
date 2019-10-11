@@ -27,7 +27,7 @@ public class ClipboardListenerService extends Service {
         public void onPrimaryClipChanged() {
             Log.d("changed", "onPrimaryClipChanged");
             ClipData clip = mClipboardManager.getPrimaryClip();
-            Toast.makeText(ClipboardListenerService.this, clip.getItemAt(0).getText().toString()+"lol", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ClipboardListenerService.this, clip.getItemAt(0).getText().toString(), Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -69,10 +69,6 @@ public class ClipboardListenerService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        //onTaskRemoved(intent);
-        // TODO Auto-generated method stub
-
-
         return START_STICKY;
     }
 
@@ -86,12 +82,7 @@ public class ClipboardListenerService extends Service {
 
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel serviceChannel = new NotificationChannel(
-                    CHANNEL_ID,
-                    "Foreground Service Channel",
-                    NotificationManager.IMPORTANCE_DEFAULT
-            );
-
+            NotificationChannel serviceChannel = new NotificationChannel(CHANNEL_ID,"Kopi Listener",NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(serviceChannel);
         }
