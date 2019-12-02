@@ -5,12 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class HomepageActivity extends AppCompatActivity{
     EditText editText_clip_content;
+    Button button_logout;
+
+    SharedPreferences sharedPreferences;
+    String pref_name = "kopi_pref";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +28,21 @@ public class HomepageActivity extends AppCompatActivity{
         set_views();
         update_clip_content();
 
-        Intent intent = new Intent(this, ClipboardListenerService.class);
+        final Intent intent = new Intent(this, ClipboardListenerService.class);
         startService(intent);
+
+        button_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sharedPreferences = getSharedPreferences(pref_name, 0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove("logged_in");
+                editor.remove("email_id");
+                editor.commit();
+                Intent logout_intent = new Intent(HomepageActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -33,11 +54,15 @@ public class HomepageActivity extends AppCompatActivity{
 
     private void set_views(){
         editText_clip_content = (EditText) findViewById(R.id.editText_clip_content);
+        button_logout = (Button) findViewById(R.id.button_logout);
     }
 
     private void update_clip_content(){
         ClipboardManager clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
         ClipData clip_content = clipboardManager.getPrimaryClip();
-        editText_clip_content.setText(clip_content.getItemAt(0).getText());
+        if(clip_content != null)
+            editText_clip_content.setText(clip_content.getItemAt(0).getText());
+        else
+            editText_clip_content.setText("");
     }
 }

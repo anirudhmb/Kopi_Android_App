@@ -95,7 +95,7 @@
         android:layout_width="203dp"
         android:layout_height="33dp"
         android:gravity="center"
-        android:text="@string/not_registered"
+        android:text="@string/already_registered"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_background_2"
         app:layout_constraintEnd_toEndOf="@+id/imageView_background_2"
