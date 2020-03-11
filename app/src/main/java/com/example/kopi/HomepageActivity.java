@@ -28,13 +28,14 @@ public class HomepageActivity extends AppCompatActivity{
         set_views();
         update_clip_content();
 
+        sharedPreferences = getSharedPreferences(pref_name, 0);
         final Intent intent = new Intent(this, ClipboardListenerService.class);
+        intent.putExtra("email_id", sharedPreferences.getString("email_id", null));
         startService(intent);
 
         button_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sharedPreferences = getSharedPreferences(pref_name, 0);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.remove("logged_in");
                 editor.remove("email_id");
